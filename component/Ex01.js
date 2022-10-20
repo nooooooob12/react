@@ -1,26 +1,15 @@
-import { useState } from 'react'
-function Ex01(){
 
-    //const array = ['눈','바람','비','해','ꉂ(ᵔᗜᵔ*)'];
-      const [array, setArray] = useState(['눈','바람','비','해','ꉂ(ᵔᗜᵔ*)'])
 
-      function deleteData(e) {
-        //e.target.value
-        setArray(array.filter((data,index)=>{
-            return index != e.target.value
-        }));
-      }
+function Ex01(props){ 
+    // props라는 매개변수로 받아주면 부모 컴포넌트에서 속성값으로 넘긴 데이터를
+    // 전부 가져올 수 있다.
     return(
         <>
-            <ul>
-                {array.map((data,index)=>{
-
-                    return <li key={index}>{data}<button value={index} onClick={deleteData}>삭제</button></li>
-
-                })}
-            </ul>
+            <h1 style={{color:props.color}}>첫번째 컴포</h1>
+            <h1>저의 이름은 {props.name}</h1>
+            <h1>두번째 데이터: {props.ttt}</h1>
         </>
     )
 }
 
-export default Ex01;
+export default Ex01;  
